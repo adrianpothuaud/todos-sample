@@ -7,5 +7,6 @@
 .idea/*
 .next
 .vscode
+cypress/videos/*
 node_modules
 *.log

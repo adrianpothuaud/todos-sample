@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "all:checks": "run-s lint ci:build cypress:comp dev:n:test:api dev:n:test:e2e",
     "build": "next build",
     "build-storybook": "build-storybook -o docs-build -s ./public",
     "chromatic": "chromatic",
@@ -19,6 +20,7 @@
     "newman:prod": "newman run --environment postman/prod.postman_environment.json --suppress-exit-code --verbose postman/tests.postman_collection.json",
     "prisma:studio": "prisma studio",
     "start": "next start",
+    "start:n:test:api": "npm run build && start-server-and-test start http://localhost:3000 newman:dev",
     "start:n:test:e2e": "npm run build && start-server-and-test start http://localhost:3000 cypress:e2e",
     "storybook": "start-storybook -p 6006 -s ./public"
   },
