@@ -1,0 +1,136 @@
+.button {
+    align-items: center;
+    border: 1px var(--color-sky-blue) solid;
+    border-radius: 4px;
+    display: flex;
+    cursor: pointer;
+    font-weight: bold;
+    justify-content: center;
+    padding: 2px 4px;
+    text-transform: uppercase;
+}
+
+.text {
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .button {
+        padding: 4px 8px;
+    }
+}
+
+/* Has icon */
+
+.hasNoIcon {}
+
+.hasIcon {}
+
+.icon {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-right: min(4px, auto);
+    width: 24px;
+}
+
+/* loading */
+
+.notLoading {}
+
+.loading {
+    cursor: not-allowed;
+}
+
+.loading:hover {}
+
+@keyframes spin {
+    from {
+        rotate: 0deg;
+    }
+
+    to {
+        rotate: 360deg;
+    }
+}
+
+.spinner {
+    align-items: center;
+    animation: 2s spin infinite linear;
+    display: flex;
+    justify-content: center;
+    margin-left: min(4px, auto);
+    width: 24px;
+}
+
+@media screen and (min-width: 768px) {}
+
+/* Sizes */
+
+.sizeMedium {
+    font-size: 1rem;
+    min-height: 24px;
+    min-width: 80px;
+}
+
+.sizeSmall {
+    font-size: .8rem;
+    min-height: 20px;
+    min-width: 64px;
+}
+
+.sizeLarge {
+    font-size: 1.2rem;
+    min-height: 32px;
+    min-width: 96px;
+}
+
+@media screen and (min-width: 768px) {}
+
+/* Variants */
+
+.variantDefault,
+.variantLight {
+    border-color: var(--color-blue-ncs);
+    color: var(--color-blue-ncs);
+}
+
+.variantPrimary {
+    background-color: var(--color-blue-ncs);
+    color: white;
+}
+
+.variantSecondary {
+    background-color: var(--color-sky-blue);
+    color: white;
+}
+
+.variantDanger,
+.variantError {
+    background-color: var(--color-rosewood);
+    border-color: var(--color-saddle-brown);
+    color: white;
+}
+
+.variantSuccess,
+.variantSubmit {
+    background-color: var(--color-june-bud);
+    border-color: var(--color-june-bud);
+    color: white;
+}
+
+@media screen and (min-width: 768px) {}
+
+/* Disabled */
+
+.enabled {}
+
+.disabled {
+    background-color: var(--color-saddle-brown);
+    border: none;
+    color: white;
+    cursor: not-allowed;
+    opacity: .5;
+}
+
+@media screen and (min-width: 768px) {}
