@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006 -s ./public",
-    "build-storybook": "build-storybook -s ./public"
+    "build-storybook": "build-storybook -s ./public",
+    "chromatic": "npx chromatic --project-token=317222bd9234"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -42,5 +43,7 @@
     "eslint-plugin-storybook": "^0.6.8",
     "husky": "^8.0.2",
     "prisma": "^4.8.0"
-  }
+  },
+  "readme": "ERROR: No README data found!",
+  "_id": "todos-sample@0.1.0"
 }
