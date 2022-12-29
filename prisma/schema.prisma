@@ -11,45 +11,34 @@ datasource db {
 }
 
 model User {
-  id        String   @id @default(uuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  email     String?  @unique
-  image     String?
-  role      Role     @default(USER)
-
-  todoLists TodoList[]
-  todoItems TodoItem[]
-}
-
-enum Role {
-  USER
+  id              String     @id @default(uuid())
+  createdAt       DateTime   @default(now())
+  updatedAt       DateTime   @updatedAt
+  email           String?    @unique
+  ownedTodoLists  TodoList[] @relation(name: "list-owned-by")
+  sharedTodoLists TodoList[] @relation(name: "list-shared-with")
 }
 
 model TodoList {
-  id          String   @id @default(uuid())
-  createdAt   DateTime @default(now())
-  updatedAt   DateTime @updatedAt
+  id          String     @id @default(uuid())
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
   title       String
   description String
-  url         String
-  imageUrl    String
-  category    String
+  owner       User?      @relation(fields: [ownerId], references: [id], name: "list-owned-by")
+  ownerId     String?
+  guests      User[]     @relation(name: "list-shared-with")
+  items       TodoItem[] @relation(name: "items-in-list")
 }
 
 model TodoItem {
   id          String    @id @default(uuid())
+  completed   Boolean   @default(false)
   completedAt DateTime?
   createdAt   DateTime  @default(now())
   updatedAt   DateTime  @updatedAt
   title       String
   description String
-  url         String
-  imageUrl    String
-  category    String
-
-  author      User?     @relation(fields: [authorId], references: [id])
-  authorId    Int?
-
-  readers     User[]?
+  list        TodoList  @relation(fields: [listId], references: [id], name: "items-in-list")
+  listId      String
 }
