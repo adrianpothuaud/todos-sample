@@ -14,9 +14,9 @@ jobs:
         uses: cypress-io/github-action@v5.0.0 # use the explicit version number
         with:
           browser: chrome
-          build: yarn prisma db push && yarn prisma generate && yarn build
+          build: npx prisma db push && npx prisma generate && npm run build
           record: true
-          start: yarn start
+          start: npm run start
         env:
           # pass GitHub token to detect new build vs re-run build
           GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
