@@ -17,12 +17,14 @@ export const Default = () => (
   <Button
     aria={{
       description: undefined,
-      label: ''
+      label: 'Storybook button'
     }}
-    id={''}
-    label={''}
+    id={'storybook-1'}
+    label={'Story 1'}
     onClick={function(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
       throw new Error('Function not implemented.')
     }}
+    size="medium"
+    variant="primary"
   />
 )
