@@ -13,7 +13,6 @@ jobs:
           npm install
           npm run build
           npm start &
-      - uses: matt-ball/newman-action@master
-        with:
-          collection: postman/tests.postman_collection.json
-          environment: postman/local.postman_environment.json
+      - name: Run
+        run: |
+          npm run newman:dev
