@@ -19,6 +19,14 @@ model User {
   sharedTodoLists TodoList[] @relation(name: "list-shared-with")
 }
 
+model Session {
+  id        String    @id @default(uuid())
+  createdAt DateTime  @default(now())
+  expiresAt DateTime
+  secret    String
+  userId    String
+}
+
 model TodoList {
   id          String     @id @default(uuid())
   createdAt   DateTime   @default(now())
