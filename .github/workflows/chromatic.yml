@@ -8,7 +8,7 @@ on: pull_request
 
 # List of jobs
 jobs:
-  chromatic-deployment:
+  visual-tests:
     # Operating System
     runs-on: ubuntu-latest
     # Job steps

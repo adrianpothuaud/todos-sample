@@ -3,7 +3,7 @@ name: Cypress
 on: pull_request
 
 jobs:
-  components:
+  component-tests:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -16,7 +16,7 @@ jobs:
           # to run component tests, we need to use "component: true"
           component: true
           tag: components
-  e2e:
+  e2e-tests:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout

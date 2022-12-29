@@ -3,7 +3,7 @@ name: Newman
 on: pull_request
 
 jobs:
-  components:
+  api-tests:
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout

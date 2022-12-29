@@ -3,7 +3,7 @@ on:
   push:
     paths: ["master"]
 jobs:
-  build-and-deploy:
+  deploy-pages:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout 🛎️
