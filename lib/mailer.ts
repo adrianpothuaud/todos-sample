@@ -25,7 +25,7 @@ export const mailer = Mailer(
 )
 
 export const sendAuthEmail = (to: string) => {
-  mailer.send('AuthEmail', {}, {to})
+  mailer.send('AuthEmail', {}, { to })
     .then(() => {
 
     })

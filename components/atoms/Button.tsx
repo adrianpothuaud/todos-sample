@@ -1,7 +1,6 @@
 import classNames from 'classnames'
 import React, { FC } from 'react'
 
-
 import styles from './Button.module.css'
 import ButtonProps from './Button.props'
 

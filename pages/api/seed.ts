@@ -1,11 +1,12 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from 'next'
 import crypto from 'crypto'
-import {add} from 'date-fns'
+
+import { add } from 'date-fns'
+import type { NextApiRequest, NextApiResponse } from 'next'
 
 import env from '../../lib/env'
-import {prisma} from '../../lib/prisma'
-import {getRandomEmailBasedOn} from '../../lib/randoms'
+import { prisma } from '../../lib/prisma'
+import { getRandomEmailBasedOn } from '../../lib/randoms'
 
 type SeedResult = {
   ok: boolean
@@ -40,14 +41,14 @@ export default async function handler(
     // --- create user sessions
     const user1Session = await prisma.session.create({
       data: {
-        expiresAt: add(new Date(), {days: 2}),
+        expiresAt: add(new Date(), { days: 2 }),
         secret: crypto.randomBytes(16).toString('hex'),
         userId: user1.id
       }
     })
     const user2Session = await prisma.session.create({
       data: {
-        expiresAt: add(new Date(), {days: 2}),
+        expiresAt: add(new Date(), { days: 2 }),
         secret: crypto.randomBytes(16).toString('hex'),
         userId: user2.id
       }
@@ -105,8 +106,8 @@ export default async function handler(
         }
       }
     })
-    res.status(200).json({ok: true})
+    res.status(200).json({ ok: true })
   } else {
-    res.status(403).json({ok: false, error: 'not allowed'})
+    res.status(403).json({ ok: false, error: 'not allowed' })
   }
 }

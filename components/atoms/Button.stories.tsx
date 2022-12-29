@@ -1,5 +1,6 @@
 import { ComponentMeta } from '@storybook/react'
 import React, { MouseEventHandler } from 'react'
+
 import Button from './Button'
 
 const defaultClickHandler: MouseEventHandler = (_e) => {
@@ -15,16 +16,16 @@ export default {
 
 export const Default = () => (
   <Button
+    id={'storybook-1'}
+    label={'Story 1'}
+    size="medium"
+    variant="primary"
     aria={{
       description: undefined,
       label: 'Storybook button'
     }}
-    id={'storybook-1'}
-    label={'Story 1'}
     onClick={function(event: React.MouseEvent<HTMLButtonElement, MouseEvent>): void {
       throw new Error('Function not implemented.')
     }}
-    size="medium"
-    variant="primary"
   />
 )
