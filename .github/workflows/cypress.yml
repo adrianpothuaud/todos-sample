@@ -15,7 +15,6 @@ jobs:
         with:
           # to run component tests, we need to use "component: true"
           component: true
-          tag: components
   e2e-tests:
     runs-on: ubuntu-20.04
     steps:
@@ -27,10 +26,11 @@ jobs:
         uses: cypress-io/github-action@v5.0.2 # use the explicit version number
         with:
           browser: chrome
-          build: npx prisma db push && npx prisma generate && npm run build
+          build: npm run ci:build
           record: true
           start: npm run start
           tag: e2e
+          wait-on: http://localhost:3000
         env:
           DATABASE_URL: ${{secrets.DATABASE_URL}}
           # pass GitHub token to detect new build vs re-run build

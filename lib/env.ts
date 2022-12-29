@@ -1,0 +1,27 @@
+type Env = {
+  DATABASE_URL: string
+  MAIL_TRANSPORT_AUTH_PASSWORD: string
+  MAIL_TRANSPORT_AUTH_USER: string
+  MAIL_TRANSPORT_DEFAULT_FROM: string
+  MAIL_TRANSPORT_HOST: string
+  MAIL_TRANSPORT_PORT: number
+  MAILTRAP_ACCOUNT_ID: string
+  MAILTRAP_API_TOKEN: string
+  MAILTRAP_INBOX_ID: string
+  NODE_ENV: string
+}
+
+const env: Env = {
+  DATABASE_URL: process.env.DATABASE_URL ?? '',
+  MAIL_TRANSPORT_AUTH_PASSWORD: process.env.MAIL_TRANSPORT_AUTH_PASSWORD ?? '',
+  MAIL_TRANSPORT_AUTH_USER: process.env.MAIL_TRANSPORT_AUTH_USER ?? '',
+  MAIL_TRANSPORT_DEFAULT_FROM: process.env.MAIL_TRANSPORT_DEFAULT_FROM ?? 'admin@todos.io',
+  MAIL_TRANSPORT_HOST: process.env.MAIL_TRANSPORT_HOST ?? '',
+  MAIL_TRANSPORT_PORT: parseInt(process.env.MAIL_TRANSPORT_PORT ?? ''),
+  MAILTRAP_ACCOUNT_ID: process.env.MAILTRAP_ACCOUNT_ID ?? '',
+  MAILTRAP_API_TOKEN: process.env.MAILTRAP_API_TOKEN ?? '',
+  MAILTRAP_INBOX_ID: process.env.MAILTRAP_INBOX_ID ?? '',
+  NODE_ENV: process.env.NODE_ENV ?? 'development',
+}
+
+export default env
