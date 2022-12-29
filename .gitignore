@@ -6,7 +6,6 @@
 .idea/
 .idea/*
 .next
-.npmrc
 .vscode
 node_modules
 *.log
