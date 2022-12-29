@@ -1,0 +1,175 @@
+info @storybook/react v6.5.15
+info 
+info => Cleaning outputDir: /var/folders/bt/3dcsb90n6d50hj2z89x03l7c0000gn/T/chromatic--91168-0fQCf6GIWk7b
+(node:91183) DeprecationWarning: --static-dir CLI flag is deprecated, see:
+
+https://github.com/storybookjs/storybook/blob/next/MIGRATION.md#deprecated---static-dir-cli-flag
+(Use `node --trace-deprecation ...` to show where the warning was created)
+info => Loading presets
+info => Copying static files: ././public => ./
+info => Compiling manager..
+info => Compiling preview..
+info Addon-docs: using MDX1
+info => Using implicit CSS loaders
+info => Using default Webpack5 setup
+<s> [webpack.Progress] 0% 
+
+<s> [webpack.Progress] 1% setup before run
+<s> [webpack.Progress] 1% setup before run NodeEnvironmentPlugin
+<s> [webpack.Progress] 1% setup before run
+<s> [webpack.Progress] 2% setup run
+<s> [webpack.Progress] 2% setup run
+<s> [webpack.Progress] 4% setup normal module factory
+<s> [webpack.Progress] 4% setup normal module factory CaseSensitivePathsPlugin
+<s> [webpack.Progress] 4% setup normal module factory
+<s> [webpack.Progress] 5% setup context module factory
+<s> [webpack.Progress] 5% setup context module factory
+<s> [webpack.Progress] 6% setup before compile
+<s> [webpack.Progress] 6% setup before compile ProgressPlugin
+<s> [webpack.Progress] 6% setup before compile
+<s> [webpack.Progress] 7% setup compile
+<s> [webpack.Progress] 7% setup compile ExternalsPlugin
+<s> [webpack.Progress] 7% setup compile
+<s> [webpack.Progress] 8% setup compilation
+<s> [webpack.Progress] 8% setup compilation ArrayPushCallbackChunkFormatPlugin
+<s> [webpack.Progress] 8% setup compilation JsonpChunkLoadingPlugin
+<s> [webpack.Progress] 8% setup compilation StartupChunkDependenciesPlugin
+<s> [webpack.Progress] 8% setup compilation ImportScriptsChunkLoadingPlugin
+<s> [webpack.Progress] 8% setup compilation FetchCompileWasmPlugin
+<s> [webpack.Progress] 8% setup compilation FetchCompileAsyncWasmPlugin
+<s> [webpack.Progress] 8% setup compilation WorkerPlugin
+<s> [webpack.Progress] 8% setup compilation SplitChunksPlugin
+<s> [webpack.Progress] 8% setup compilation RuntimeChunkPlugin
+<s> [webpack.Progress] 8% setup compilation ResolverCachePlugin
+<s> [webpack.Progress] 8% setup compilation HtmlWebpackPlugin
+<s> [webpack.Progress] 8% setup compilation
+<s> [webpack.Progress] 9% setup compilation
+<s> [webpack.Progress] 9% setup compilation DefinePlugin
+<s> [webpack.Progress] 9% setup compilation ProvidePlugin
+<s> [webpack.Progress] 9% setup compilation ProgressPlugin
+<s> [webpack.Progress] 9% setup compilation DocGenPlugin
+<s> [webpack.Progress] 9% setup compilation ChunkPrefetchPreloadPlugin
+<s> [webpack.Progress] 9% setup compilation SourceMapDevToolPlugin
+<s> [webpack.Progress] 9% setup compilation JavascriptModulesPlugin
+<s> [webpack.Progress] 9% setup compilation JsonModulesPlugin
+<s> [webpack.Progress] 9% setup compilation AssetModulesPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation EntryPlugin
+<s> [webpack.Progress] 9% setup compilation RuntimePlugin
+<s> [webpack.Progress] 9% setup compilation InferAsyncModulesPlugin
+<s> [webpack.Progress] 9% setup compilation DataUriPlugin
+<s> [webpack.Progress] 9% setup compilation FileUriPlugin
+<s> [webpack.Progress] 9% setup compilation CompatibilityPlugin
+<s> [webpack.Progress] 9% setup compilation HarmonyModulesPlugin
+<s> [webpack.Progress] 9% setup compilation AMDPlugin
+<s> [webpack.Progress] 9% setup compilation RequireJsStuffPlugin
+<s> [webpack.Progress] 9% setup compilation CommonJsPlugin
+<s> [webpack.Progress] 9% setup compilation LoaderPlugin
+<s> [webpack.Progress] 9% setup compilation LoaderPlugin
+<s> [webpack.Progress] 9% setup compilation NodeStuffPlugin
+<s> [webpack.Progress] 9% setup compilation APIPlugin
+<s> [webpack.Progress] 9% setup compilation ExportsInfoApiPlugin
+<s> [webpack.Progress] 9% setup compilation WebpackIsIncludedPlugin
+<s> [webpack.Progress] 9% setup compilation ConstPlugin
+<s> [webpack.Progress] 9% setup compilation UseStrictPlugin
+<s> [webpack.Progress] 9% setup compilation RequireIncludePlugin
+<s> [webpack.Progress] 9% setup compilation RequireEnsurePlugin
+<s> [webpack.Progress] 9% setup compilation RequireContextPlugin
+<s> [webpack.Progress] 9% setup compilation ImportPlugin
+<s> [webpack.Progress] 9% setup compilation RequireContextPlugin
+<s> [webpack.Progress] 9% setup compilation SystemPlugin
+<s> [webpack.Progress] 9% setup compilation ImportMetaPlugin
+<s> [webpack.Progress] 9% setup compilation URLPlugin
+<s> [webpack.Progress] 9% setup compilation DefaultStatsFactoryPlugin
+<s> [webpack.Progress] 9% setup compilation DefaultStatsPresetPlugin
+<s> [webpack.Progress] 9% setup compilation DefaultStatsPrinterPlugin
+<s> [webpack.Progress] 9% setup compilation JavascriptMetaInfoPlugin
+<s> [webpack.Progress] 9% setup compilation EnsureChunkConditionsPlugin
+<s> [webpack.Progress] 9% setup compilation RemoveEmptyChunksPlugin
+<s> [webpack.Progress] 9% setup compilation MergeDuplicateChunksPlugin
+<s> [webpack.Progress] 9% setup compilation FlagIncludedChunksPlugin
+<s> [webpack.Progress] 9% setup compilation SideEffectsFlagPlugin
+<s> [webpack.Progress] 9% setup compilation FlagDependencyExportsPlugin
+<s> [webpack.Progress] 9% setup compilation FlagDependencyUsagePlugin
+<s> [webpack.Progress] 9% setup compilation InnerGraphPlugin
+<s> [webpack.Progress] 9% setup compilation MangleExportsPlugin
+<s> [webpack.Progress] 9% setup compilation ModuleConcatenationPlugin
+<s> [webpack.Progress] 9% setup compilation NoEmitOnErrorsPlugin
+<s> [webpack.Progress] 9% setup compilation RealContentHashPlugin
+<s> [webpack.Progress] 9% setup compilation WasmFinalizeExportsPlugin
+<s> [webpack.Progress] 9% setup compilation NamedModuleIdsPlugin
+<s> [webpack.Progress] 9% setup compilation DeterministicChunkIdsPlugin
+<s> [webpack.Progress] 9% setup compilation DefinePlugin
+<s> [webpack.Progress] 9% setup compilation TerserPlugin
+<s> [webpack.Progress] 9% setup compilation TemplatedPathPlugin
+<s> [webpack.Progress] 9% setup compilation RecordIdsPlugin
+<s> [webpack.Progress] 9% setup compilation WarnCaseSensitiveModulesPlugin
+<s> [webpack.Progress] 9% setup compilation IgnoreWarningsPlugin
+<s> [webpack.Progress] 9% setup compilation
+<s> [webpack.Progress] 10% building
+<s> [webpack.Progress] 10% building 0/1 entries 0/0 dependencies 0/0 modules
+<s> [webpack.Progress] 13% building 1/14 entries 3/18 dependencies 1/1 modules
+<s> [webpack.Progress] 99% cache begin idle
+<s> [webpack.Progress] 99% cache begin idle
+<s> [webpack.Progress] 100% 
+
+ERR! => Failed to build the preview
+ERR! Module not found: Error: Can't resolve './stories' in '/Users/adrianpothuaud/Documents/todos-sample'
+<s> [webpack.Progress] 99% cache shutdown
+<s> [webpack.Progress] 99% cache shutdown
+<s> [webpack.Progress] 100% 
+
+<s> [webpack.Progress] 17% building 2/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 21% building 3/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 25% building 4/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 29% building 5/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 33% building 6/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 37% building 7/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 41% building 8/14 entries 11/18 dependencies 1/8 modules
+<s> [webpack.Progress] 45% building 9/14 entries 13/18 dependencies 1/10 modules
+<s> [webpack.Progress] 49% building 10/14 entries 13/18 dependencies 1/10 modules
+<s> [webpack.Progress] 53% building 11/14 entries 17/18 dependencies 1/14 modules
+<s> [webpack.Progress] 57% building 12/14 entries 17/18 dependencies 1/14 modules
+<s> [webpack.Progress] 61% building 13/14 entries 17/18 dependencies 1/14 modules
+<s> [webpack.Progress] 61% building 14/14 entries 17/18 dependencies 1/14 modules
+info => Manager built (11 s)
+ERR! ModuleNotFoundError: Module not found: Error: Can't resolve './stories' in '/Users/adrianpothuaud/Documents/todos-sample'
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/webpack/lib/Compilation.js:2016:28
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/webpack/lib/ContextModuleFactory.js:214:15
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/neo-async/async.js:2830:7
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/neo-async/async.js:6877:13
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/webpack/lib/ContextModuleFactory.js:184:26
+ERR!     at finishWithoutResolve (/Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:312:11)
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:386:15
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:435:5
+ERR!     at eval (eval at create (/Users/adrianpothuaud/Documents/todos-sample/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:435:5
+ERR!  ModuleNotFoundError: Module not found: Error: Can't resolve './stories' in '/Users/adrianpothuaud/Documents/todos-sample'
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/webpack/lib/Compilation.js:2016:28
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/webpack/lib/ContextModuleFactory.js:214:15
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/neo-async/async.js:2830:7
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/neo-async/async.js:6877:13
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/webpack/lib/ContextModuleFactory.js:184:26
+ERR!     at finishWithoutResolve (/Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:312:11)
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:386:15
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:435:5
+ERR!     at eval (eval at create (/Users/adrianpothuaud/Documents/todos-sample/node_modules/tapable/lib/HookCodeFactory.js:33:10), <anonymous>:15:1)
+ERR!     at /Users/adrianpothuaud/Documents/todos-sample/node_modules/enhanced-resolve/lib/Resolver.js:435:5
+ERR! resolve './stories' in '/Users/adrianpothuaud/Documents/todos-sample'
+ERR!   using description file: /Users/adrianpothuaud/Documents/todos-sample/package.json (relative path: .)
+ERR!     Field 'browser' doesn't contain a valid alias configuration
+ERR!     using description file: /Users/adrianpothuaud/Documents/todos-sample/package.json (relative path: ./stories)
+ERR!       /Users/adrianpothuaud/Documents/todos-sample/stories doesn't exist
+info => Loading presets
