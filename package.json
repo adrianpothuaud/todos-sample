@@ -3,13 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "storybook": "start-storybook -p 6006 -s ./public",
     "build-storybook": "build-storybook -o docs-build -s ./public",
-    "chromatic": "npx chromatic --project-token=317222bd9234"
+    "chromatic": "chromatic",
+    "cypress": "cypress open",
+    "cypress:comp": "cypress run --component",
+    "cypress:e2e": "cypress run --e2e",
+    "dev": "next dev",
+    "dev:n:test": "start-server-and-test dev http://localhost:3000 cypress:e2e",
+    "lint": "next lint",
+    "start": "next start",
+    "start:n:test": "npm run build && start-server-and-test start http://localhost:3000 cypress:e2e",
+    "storybook": "start-storybook -p 6006 -s ./public"
   },
   "dependencies": {
     "@next/font": "13.1.1",
@@ -45,7 +50,9 @@
     "cypress": "^12.2.0",
     "eslint-plugin-storybook": "^0.6.8",
     "husky": "^8.0.2",
-    "prisma": "^4.8.0"
+    "npm-run-all": "^4.1.5",
+    "prisma": "^4.8.0",
+    "start-server-and-test": "^1.15.2"
   },
   "readme": "ERROR: No README data found!",
   "_id": "todos-sample@0.1.0"

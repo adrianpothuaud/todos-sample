@@ -1,5 +1,8 @@
 describe('As a guest user', () => {
   describe('When I open the app', () => {
+    before(() => {
+      cy.visit('/')
+    })
     it('I am not logged in', () => {
 
     })
