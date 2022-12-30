@@ -9,13 +9,18 @@
   --color-saddle-brown-rgb: 130,50,0;
   --color-rosewood: #650D1B;
   --color-rosewood-rgb: 101,13,27;
+
+  box-sizing: border-box;
 }
 
 html, body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
   color: black;
   font-family: "Roboto", serif;
   height: 100vh;
-  margin: 0;
-  padding: 0;
   width: 100vw;
 }

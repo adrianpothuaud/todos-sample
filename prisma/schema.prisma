@@ -11,32 +11,69 @@ datasource db {
 }
 
 model User {
-  id              String     @id @default(uuid())
-  createdAt       DateTime   @default(now())
-  updatedAt       DateTime   @updatedAt
-  email           String?    @unique
-  ownedTodoLists  TodoList[] @relation(name: "list-owned-by")
-  sharedTodoLists TodoList[] @relation(name: "list-shared-with")
+  id                  String       @id @default(uuid())
+  createdAt           DateTime     @default(now())
+  updatedAt           DateTime     @updatedAt
+  email               String       @unique
+  firstName           String
+  lastName            String
+  ownedTodoLists      TodoList[]   @relation(name: "list-owned-by")
+  sentEmails          Email[]      @relation(name: "email-to-user")
+  sharedTodoLists     TodoList[]   @relation(name: "list-shared-with")
+  receivedInvitations Invitation[] @relation(name: "invitation-sent-to")
+  sentInvitations     Invitation[] @relation(name: "invitation-sent-by")
+  sessions            Session[]    @relation(name: "user-session")
+}
+
+model Email {
+  id       String   @id @default(uuid())
+  from     String
+  sentAt   DateTime @default(now())
+  body     String
+  subject  String
+  toUser   User     @relation(fields: [toUserId], references: [id], name: "email-to-user")
+  toUserId String
 }
 
 model Session {
-  id        String    @id @default(uuid())
-  createdAt DateTime  @default(now())
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
   expiresAt DateTime
   secret    String
+  user      User     @relation(fields: [userId], references: [id], name: "user-session")
   userId    String
+  userIP    String
 }
 
 model TodoList {
-  id          String     @id @default(uuid())
-  createdAt   DateTime   @default(now())
-  updatedAt   DateTime   @updatedAt
+  id          String       @id @default(uuid())
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
   title       String
   description String
-  owner       User?      @relation(fields: [ownerId], references: [id], name: "list-owned-by")
+  owner       User?        @relation(fields: [ownerId], references: [id], name: "list-owned-by")
   ownerId     String?
-  guests      User[]     @relation(name: "list-shared-with")
-  items       TodoItem[] @relation(name: "items-in-list")
+  guests      User[]       @relation(name: "list-shared-with")
+  items       TodoItem[]   @relation(name: "items-in-list")
+  invitations Invitation[] @relation(name: "list-invitation")
+}
+
+enum InvitationStatus {
+  SENT
+  ACCEPTED
+  DECLINED
+}
+
+model Invitation {
+  id         String           @id @default(uuid())
+  createdAt  DateTime         @default(now())
+  fromUser   User             @relation(fields: [fromUserId], references: [id], name: "invitation-sent-by")
+  fromUserId String
+  toUser     User             @relation(fields: [toUserId], references: [id], name: "invitation-sent-to")
+  toUserId   String
+  list       TodoList         @relation(fields: [listId], references: [id], name: "list-invitation")
+  listId     String
+  status     InvitationStatus @default(SENT)
 }
 
 model TodoItem {

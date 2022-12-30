@@ -1,7 +1,13 @@
 import Head from 'next/head'
 import React from 'react'
 
+import LoginForm from '../components/organisms/LoginForm'
+import AppTemplate from '../components/templates/AppTemplate'
+import useAuthentication from '../hooks/useAuthentication'
+
 export default function Home() {
+  const authState = useAuthentication()
+
   return (
     <>
       <Head>
@@ -10,9 +16,13 @@ export default function Home() {
         <meta content="width=device-width, initial-scale=1" name="viewport" />
         <link href="/favicon.ico" rel="icon" />
       </Head>
-      <main>
-        <h1>Hello</h1>
-      </main>
+      <AppTemplate>
+        {!authState.isAuth ? (
+          <LoginForm />
+        ) : (
+          <></>
+        )}
+      </AppTemplate>
     </>
   )
 }

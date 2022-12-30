@@ -1,4 +1,3 @@
-// Next.js API route support: https://nextjs.org/docs/api-routes/introduction
 import crypto from 'crypto'
 
 import { add } from 'date-fns'
@@ -20,41 +19,52 @@ export default async function handler(
   if (env.NODE_ENV !== 'production' && req.method !== undefined && req.method.toLowerCase() === 'post') {
     // --- delete everything
     await prisma.todoItem.deleteMany()
+    await prisma.invitation.deleteMany()
     await prisma.todoList.deleteMany()
+    await prisma.session.deleteMany()
+    await prisma.email.deleteMany()
     await prisma.user.deleteMany()
     // --- create users
     const user1 = await prisma.user.create({
       data: {
-        email: getRandomEmailBasedOn('titi@todos.io')
+        email: getRandomEmailBasedOn('titi@todos.io'),
+        firstName: 'titi',
+        lastName: 'test'
       }
     })
     const user2 = await prisma.user.create({
       data: {
-        email: getRandomEmailBasedOn('tata@todos.io')
+        email: getRandomEmailBasedOn('tata@todos.io'),
+        firstName: 'tata',
+        lastName: 'test'
       }
     })
     const user3 = await prisma.user.create({
       data: {
-        email: getRandomEmailBasedOn('toto@todos.io')
+        email: getRandomEmailBasedOn('toto@todos.io'),
+        firstName: 'toto',
+        lastName: 'test'
       }
     })
     // --- create user sessions
-    const user1Session = await prisma.session.create({
+    await prisma.session.create({
       data: {
         expiresAt: add(new Date(), { days: 2 }),
         secret: crypto.randomBytes(16).toString('hex'),
-        userId: user1.id
+        userId: user1.id,
+        userIP: '127.0.0.1'
       }
     })
-    const user2Session = await prisma.session.create({
+    await prisma.session.create({
       data: {
         expiresAt: add(new Date(), { days: 2 }),
         secret: crypto.randomBytes(16).toString('hex'),
-        userId: user2.id
+        userId: user2.id,
+        userIP: '127.0.0.1'
       }
     })
     // --- create todo lists
-    const todoList1 = await prisma.todoList.create({
+    await prisma.todoList.create({
       data: {
         ownerId: user1.id,
         title: 'List #1',
@@ -77,7 +87,7 @@ export default async function handler(
         }
       }
     })
-    const todoList2 = await prisma.todoList.create({
+    await prisma.todoList.create({
       data: {
         ownerId: user1.id,
         title: 'List #2',

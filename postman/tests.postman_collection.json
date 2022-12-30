@@ -7,7 +7,7 @@
 	},
 	"item": [
 		{
-			"name": "seed test data",
+			"name": "⚙️ [0] Seed test data 🌱",
 			"event": [
 				{
 					"listen": "test",
@@ -35,6 +35,904 @@
 				}
 			},
 			"response": []
+		},
+		{
+			"name": "⚙️ [1] 👼 GODMODE List Users 👨‍👨‍👦‍👦",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status((pm.environment.get(\"is_local\") === \"true\") ? 200 : 403);",
+							"});",
+							"",
+							"pm.test(\"Returns 3 Users\", function () {",
+							"    var jsonData = pm.response.json();",
+							"    pm.expect(jsonData.users.length).to.eql(3);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-TODOS-API-KEY",
+						"value": "{{god_mode_api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/god-mode/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"god-mode",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [2.1] Register new User - no payload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [2.2] Register new User - no email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"firstName\": \"tutu\",\n    \"lastName\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [2.3] Register new User - no firstName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"tutu+123@todos.io\",\n    \"lastName\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [2.4] Register new User - no lastName",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"tutu+123@todos.io\",\n    \"firstName\": \"tutu\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "✅ [2.5] Register new User",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201\", function () {",
+							"    pm.response.to.have.status(201);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"tutu+123@todos.io\",\n    \"firstName\": \"tutu\",\n    \"lastName\": \"test\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/sign-up",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"sign-up"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "⚙️ [3] 👼 GODMODE List Users 👨‍👨‍👦‍👦",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status((pm.environment.get(\"is_local\") === \"true\") ? 200 : 403);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Returns 4 Users\", function () {",
+							"    pm.expect(jsonData.users.length).to.eql(4);",
+							"});",
+							"",
+							"pm.collectionVariables.set(\"user_authentication_test_user_email\", jsonData.users[0].email);",
+							"pm.collectionVariables.set(\"user_authentication_test_user_id\", jsonData.users[0].id);"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-TODOS-API-KEY",
+						"value": "{{god_mode_api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/god-mode/users",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"god-mode",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [4.1] Ask magic link - without payload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/ask-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ask-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [4.2] Ask magic link - with unregistered email",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"unregistered+456@todos.io\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ask-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ask-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "✅ [4.3] Ask magic link",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"{{user_authentication_test_user_email}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/ask-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"ask-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "⚙️ [5] 👼 GODMODE List User Sessions 👨‍👨‍👦‍👦",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status((pm.environment.get(\"is_local\") === \"true\") ? 200 : 403);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Returns 1 Session\", function () {",
+							"    pm.expect(jsonData.sessions.length).to.eql(1);",
+							"});",
+							"",
+							"pm.collectionVariables.set(\"user_authentication_test_session_id\", jsonData.sessions[0].id);",
+							"pm.collectionVariables.set(\"user_authentication_test_session_secret\", jsonData.sessions[0].secret);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "X-TODOS-API-KEY",
+						"value": "{{god_mode_api_key}}",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "{{base_url}}/god-mode/sessions?userId={{user_authentication_test_user_id}}",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"god-mode",
+						"sessions"
+					],
+					"query": [
+						{
+							"key": "userId",
+							"value": "{{user_authentication_test_user_id}}"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "⚙️ [6.1] 👼 GODMODE Generate valid User token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status((pm.environment.get(\"is_local\") === \"true\") ? 200 : 403);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.collectionVariables.set(\"user_authentication_test_token\", jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-TODOS-API-KEY",
+						"value": "{{god_mode_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"secret\": \"{{user_authentication_test_session_secret}}\",\n    \"sessionId\": \"{{user_authentication_test_session_id}}\",\n    \"userId\": \"{{user_authentication_test_user_id}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/god-mode/generate-jwt",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"god-mode",
+						"generate-jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "⚙️ [6.2] 👼 GODMODE Generate invalid User token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status((pm.environment.get(\"is_local\") === \"true\") ? 200 : 403);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.collectionVariables.set(\"user_authentication_test_token_invalid\", jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "X-TODOS-API-KEY",
+						"value": "{{god_mode_api_key}}",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"secret\": \"tutu\",\n    \"sessionId\": \"foo\",\n    \"userId\": \"bar\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/god-mode/generate-jwt",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"god-mode",
+						"generate-jwt"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [7.1] Consume magic link - without payload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/consume-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"consume-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [7.2] Consume magic link - with invalid token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{user_authentication_test_token_invalid}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/consume-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"consume-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "✅ [7.3] Consume magic link",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{user_authentication_test_token}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/consume-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"consume-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [8.1] Check auth - without payload",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/check-auth",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"check-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [8.2] Check auth - with invalid token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{user_authentication_test_token_invalid}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/check-auth",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"check-auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "✅ [8.3] Check auth",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"token\": \"{{user_authentication_test_token}}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{base_url}}/consume-magic-link",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"consume-magic-link"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [9.1] Get User's Lists - No authorization",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 401\", function () {",
+							"    pm.response.to.have.status(401);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/get-my-lists",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"get-my-lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "❌ [9.1] Get User's Lists - Bad token",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 400\", function () {",
+							"    pm.response.to.have.status(400);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_authentication_test_token_invalid}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/get-my-lists",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"get-my-lists"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "✅ [9.2] Get User's Lists",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {",
+							"    pm.response.to.have.status(200);",
+							"});",
+							"",
+							"var jsonData = pm.response.json();",
+							"",
+							"pm.test(\"Returns 0 Lists\", function () {",
+							"    pm.expect(jsonData.lists.length).to.eql(0);",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{user_authentication_test_token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{base_url}}/get-my-lists",
+					"host": [
+						"{{base_url}}"
+					],
+					"path": [
+						"get-my-lists"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "user_authentication_test_user_id",
+			"value": ""
+		},
+		{
+			"key": "user_authentication_test_user_email",
+			"value": ""
+		},
+		{
+			"key": "user_authentication_test_session_id",
+			"value": ""
+		},
+		{
+			"key": "user_authentication_test_session_secret",
+			"value": ""
+		},
+		{
+			"key": "user_authentication_test_token",
+			"value": ""
+		},
+		{
+			"key": "user_authentication_test_token_invalid",
+			"value": ""
 		}
 	]
 }
