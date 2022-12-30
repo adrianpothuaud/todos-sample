@@ -1,12 +1,11 @@
 .DS_Store
 **/.DS_Store
-.husky/_
 .env
 .idea
 .idea/
 .idea/*
 .next
-.npmrc
 .vscode
+cypress/videos/*
 node_modules
 *.log
